@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rompecabezas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+        }
+
+        .left-panel, .right-panel {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .left-panel {
+            background-color: #f0f0f0;
+        }
+
+        .right-panel {
+            background-color: #e0e0e0;
+            position: relative;
+        }
+
+        #piezas, #zona-armado {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .pieza {
+            width: 100px;
+            height: 100px;
+            cursor: grab;
+            z-index: 10;
+            opacity: 1;
+        }
+
+        #zona-armado {
+            position: relative; 
+            border: 1px solid #000; 
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Rompecabezas</h1>
+    <div class="container">
+        <div class="left-panel">
+            <h2>Piezas del Rompecabezas</h2>
+            <div id="piezas"></div>
+        </div>
+        <div class="right-panel">
+            <h2>Zona de Armado</h2>
+            <div id="zona-armado"></div>
+        </div>
+    </div>
+
+    <label for="nivel-dificultad">Selecciona la dificultad:</label>
+    <select id="nivel-dificultad">
+        <option value="3">Fácil (3x3)</option>
+        <option value="4">Intermedio (4x4)</option>
+        <option value="5">Difícil (5x5)</option>
+    </select>
+    <button id="iniciar-juego">Iniciar Juego</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

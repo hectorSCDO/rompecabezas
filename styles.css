@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+}
+
+.left-panel, .right-panel {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.left-panel {
+    background-color: #f0f0f0;
+}
+
+.right-panel {
+    background-color: #e0e0e0;
+    position: relative;
+}
+
+#piezas, #zona-armado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pieza {
+    width: 100px;
+    height: 100px;
+    cursor: grab;
+    z-index: 10; /* Mantiene las piezas encima del fondo */
+}
+
+#zona-armado {
+    position: relative; /* Para que las piezas se posicionen correctamente */
+    border: 1px solid #000; /* Opcional: solo para visualizar el área */
+    background: rgba(255, 255, 255, 0.5); /* Fondo transparente */
+}
+
+#zona-armado::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/arandano.jpg"); /* La imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* Hacer la imagen de fondo transparente */
+    z-index: 1; /* La imagen de fondo tiene un z-index más bajo */
+    pointer-events: none; /* Para que no interfiera con el arrastre de las piezas */
+}
